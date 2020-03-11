@@ -1,0 +1,32 @@
+Jeg skal have lavet en klasse sopm kan bruges på alle klasser (inheritance)
+I denne klasse har jeg 4 metoder (Insert,Delete,Update,Read) 
+Jeg skal lave endnu en metode som skal constructe en string som skal bruges til at query databasen med.
+denne metode skal jeg lave stringen parameterized.
+Denne string skal ligges cmd .
+
+     public void Save(Model.AnimalPet animalPet)
+        {
+            string insert = "Insert into @TableName (Navn,Alder) Values (@AnimalName,@AnimalAge)";
+            SqlCommand sqlCommand = new SqlCommand(insert, conn);
+            sqlCommand.Parameters.Add(new SqlParameter("@TableName", animalPet.TableName));
+            sqlCommand.Parameters.Add(new SqlParameter("@AnimalName", animalPet.AnimalName));
+            sqlCommand.Parameters.Add(new SqlParameter("@AnimalAge", animalPet.AnimalAge));
+            Connection(conn, sqlCommand);
+        }
+        public void Update(Model.AnimalPet animalPet)
+        {
+            
+        }
+        public void view()
+        {
+
+        }
+        public void Delete(Model.AnimalPet animalPet)
+        {
+            string delete = "Delete from AnimalPet Where Navn = @animalName";
+            SqlCommand sqlCommand = new SqlCommand(delete,conn);
+            sqlCommand.Parameters.Add(new SqlParameter("@animalName", animalPet.AnimalName));
+            Connection(conn, sqlCommand);
+        }
+        
+ 
