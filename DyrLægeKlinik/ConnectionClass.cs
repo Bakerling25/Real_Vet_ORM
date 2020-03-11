@@ -21,11 +21,11 @@ namespace DyrLægeKlinik
             SqlConnection connection = new SqlConnection(builder.ConnectionString);
             return connection;
         }
-        public static void Insert(string tableName,ArrayList values,List<string> keys,SqlConnection connection)
+        public static int Insert(string tableName,ArrayList values,List<string> keys,SqlConnection connection)
         {
             string colums = string.Join(",", keys);
             string parammeters = "@" + string.Join(",@", keys);
-            string query = "INSERT INTO " + tableName + " (" + colums + ")" +
+            string query = "INSERT INTO " + tableName + " (" + colums + ") Output Inserted.KæleDyr_ID" +
             " VALUES " + "(" + parammeters + ")";
             SqlCommand sqlCommand = new SqlCommand(query, connection);
 
@@ -37,10 +37,10 @@ namespace DyrLægeKlinik
             Console.WriteLine(query);
 
             connection.Open();
-            //int pk_Key = (int)sqlCommand.ExecuteScalar();
-            sqlCommand.ExecuteNonQuery();
+            int pk_Key = (int)sqlCommand.ExecuteScalar();
+            //sqlCommand.ExecuteNonQuery();
             connection.Close();
-            //return pk_Key;
+            return pk_Key;
         }
         public static void Delete(string tableName,string colum,int delete_Id, SqlConnection connection)
         {
@@ -53,6 +53,11 @@ namespace DyrLægeKlinik
             connection.Open();
             sqlCommand.ExecuteNonQuery();
             connection.Close();
+        }
+        public static void Update(string tableName, ArrayList values, List<string> keys, SqlConnection connection)
+        {
+            
+
         }
    
     }

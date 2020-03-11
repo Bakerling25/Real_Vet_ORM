@@ -67,12 +67,26 @@ namespace DyrLægeKlinik.Model
                 "DyrEjer_ID",
                 "Køn_ID"
             };
-            ConnectionClass.Insert(tableName, values, keys,conn);
+            Console.WriteLine(ConnectionClass.Insert(tableName, values, keys,conn).ToString() + " Primærnøgle");
         }
         public void Delete()
         {
             
             ConnectionClass.Delete(tableName, "KæleDyr_ID", KæleDyr_ID, conn);
+        }
+        public void Update()
+        {
+            ArrayList values = new ArrayList()
+            {
+                Navn,
+                Alder
+            };
+            List<string> keys = new List<string>()
+            {
+                "Navn",
+                "Alder"
+            };
+            ConnectionClass.Update(tableName, values, keys, conn);
         }
        
 

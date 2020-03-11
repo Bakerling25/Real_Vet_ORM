@@ -8,51 +8,30 @@ namespace DyrLægeKlinik
     {
         static void Main(string[] args)
         {
-
-            Model.Behandling behandling = new Model.Behandling(ConnectionClass.SqlConnection())
+            Model.AnimalPet animalPet = new Model.AnimalPet(ConnectionClass.SqlConnection())
             {
-                BehandlingsType_ID = new List<Model.BehandlingsType>()
+                //KæleDyr_ID = 13018,
+                Navn = "Fidotest",
+                Alder = 10,
+                DyrKøn = new Model.AnimalSex(ConnectionClass.SqlConnection())
                 {
-                    new Model.BehandlingsType(ConnectionClass.SqlConnection())
-                    {
-                        Price = 134,
-                        Procedure = "TandPleje"
-                    }
+                    Køn_Id = 2,
+                    Køn = "HanKøn"
                 },
-                KæleDyr_ID = new List<Model.AnimalPet>()
+                DyrEjer = new Model.AnimalOwner(ConnectionClass.SqlConnection())
                 {
-                    new Model.AnimalPet(ConnectionClass.SqlConnection())
-                    {
-                        Alder = 6,
-                        Navn = "Fido",
-                        DyrEjer = new Model.AnimalOwner(ConnectionClass.SqlConnection())
-                        {
-                            Adresse = new List<Model.Adresse>()
-                            {
-                                new Model.Adresse(ConnectionClass.SqlConnection())
-                                {
-                                    GadeNavn = "Vej-199",
-                                    ZipCode_ID = new Model.ZipCode(ConnectionClass.SqlConnection())
-                                    {
-                                        City = "Odense"
-                                    }
-                                }
-                               
-                            },
-                            Navn = "ThomasEjer"
-                        },
-                        DyrKøn = new Model.AnimalSex(ConnectionClass.SqlConnection())
-                        {
-                            Køn = "HanKøn"
-                        },
-                        DyrRace = new Model.AnimalRace(ConnectionClass.SqlConnection())
-                        {
-                            Race = "Pudel"
-                        }
-                    }
+                    DyrEjer_ID = 150,
+                    Navn = "ThomasEjer"
+                },
+                DyrRace = new Model.AnimalRace(ConnectionClass.SqlConnection())
+                {
+                    DyrRace_Id = 32,
+                    Race = "Pudel"
                 }
             };
-            behandling.Save();
+            //animalPet.Save();
+            //animalPet.Delete();
+            animalPet.Update();
             Console.ReadLine();
         }
     }
