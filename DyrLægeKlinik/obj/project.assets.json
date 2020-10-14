@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HFGF\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HFGF\\source\\repos\\VetExcercise-master\\DyrLægeKlinik\\DyrLægeKlinik.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Real_Vet_ORM\\DyrLægeKlinik\\DyrLægeKlinik.csproj",
       "projectName": "DyrLægeKlinik",
-      "projectPath": "C:\\Users\\HFGF\\source\\repos\\VetExcercise-master\\DyrLægeKlinik\\DyrLægeKlinik.csproj",
-      "packagesPath": "C:\\Users\\HFGF\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HFGF\\source\\repos\\VetExcercise-master\\DyrLægeKlinik\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\Real_Vet_ORM\\DyrLægeKlinik\\DyrLægeKlinik.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\Real_Vet_ORM\\DyrLægeKlinik\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HFGF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -510,7 +510,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

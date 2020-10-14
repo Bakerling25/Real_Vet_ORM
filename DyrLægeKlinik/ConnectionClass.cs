@@ -34,7 +34,7 @@ namespace DyrLægeKlinik
                 sqlCommand.Parameters.Add(new SqlParameter("@" + keys[i], values[i]));
             }
 
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
 
             connection.Open();
             int pk_Key = (int)sqlCommand.ExecuteScalar();
@@ -48,7 +48,7 @@ namespace DyrLægeKlinik
             SqlCommand sqlCommand = new SqlCommand(query, connection);
             sqlCommand.Parameters.Add(new SqlParameter("@Delete_ID", delete_Id));
 
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
 
             connection.Open();
             sqlCommand.ExecuteNonQuery();
